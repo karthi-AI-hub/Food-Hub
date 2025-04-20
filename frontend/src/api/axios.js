@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const API = axios.create({
-  baseURL: 'http://localhost:5000/api',
+  baseURL: 'https://food-hub-backend-t31h.onrender.com/api',
 });
 
 // You can auto attach token if needed
