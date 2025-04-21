@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import { CartContext } from "../../context/CartContext";
 import axios from "axios";
 import { Button, Container, Table, Alert, Modal, Badge } from "react-bootstrap";
+import API from "../../api/axios";
 import jsPDF from "jspdf";
 import { QRCodeCanvas } from "qrcode.react";
 const CartPage = () => {
@@ -13,7 +14,7 @@ const CartPage = () => {
 
   const handlePlaceOrder = async () => {
     try {
-      const response = await axios.post("http://localhost:5000/api/orders", {
+      const response = await API.post('/orders', {
         rollNo,
         items: cart,
       });
